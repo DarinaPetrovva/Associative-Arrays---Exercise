@@ -1,0 +1,32 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace zad7_praktikum_miniorska_zadacha
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<string, int> cnt = new Dictionary<string, int>();
+            string input;
+            while ((input = Console.ReadLine()) != "stop")
+            {
+                int amount = int.Parse(Console.ReadLine());
+                if (cnt.ContainsKey(input))
+                {
+                    cnt[input] += amount;
+                }
+                else
+                {
+                    cnt[input] = amount;
+                }
+                
+            }
+            foreach (string key in cnt.Keys)
+            {
+                Console.WriteLine($"{key} -> {cnt[key]}");
+            }
+        }
+    }
+}
